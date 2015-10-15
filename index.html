@@ -5,7 +5,26 @@
     </head>
     <body ng-controller="mainCtrl">
         
+        <p>Add a quote</p>
+        <!--Sets $scope.quote-->
+        Title: <input ng-model="quote.text">
+        Author: <input ng-model="quote.author">
+        <button ng-click="addData(quote)">Add Quote</button>
         
+        <br/><br/>
+        
+        <p>Remove a quote</p>
+        <input>
+        <button ng-click="removeData()">Remove Quote</button>
+        
+        <br/><br/>
+        
+        <button>Filter Quotes</button>
+        
+        <div ng-repeat="quote in quotes track by $index">
+            <p>{{quote.text}}</p>
+            <p>- {{quote.author}}</p>
+        </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
         <script src="js/app.js"></script>
